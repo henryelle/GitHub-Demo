@@ -1,11 +1,23 @@
-for i in range(1,101):
-    if i % 3 == 0 and i % 5 == 0:
-        print("FizzBuzz")
+# storing numbers 1 to 100
+numRange = range(1, 101)
+
+# iterating for each number and storing in a result
+for num in numRange:
+
+    result = ""
+    # https://book.pythontips.com/en/latest/ternary_operators.html
+    result = "FizzBuzz" if num % 3 == 0 and num % 5 == 0 else num
+    if result == "FizzBuzz":
+        print(result)
         continue
-    if i % 3 == 0:
-        print("Fizz")
+    result = "Fizz" if num % 3 == 0 else num
+    if result == "Fizz":
+        print(result)
         continue
-    if i % 5 == 0:
-        print("Buzz")
+    result = "Buzz" if num % 5 == 0 else num
+    if result == "Buzz":
+        print(result)
         continue
-    print(i)
+    # if result never becomes FizzBuzz, just print the number
+    print(num)
+    
